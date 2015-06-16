@@ -1,3 +1,0 @@
-This is the ReadMe.txt file.
-
-//All the description goes here.
