@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dimension:dimension xmlns:Dimension="http://www.sap.com/ndb/BiModelDimension.ecore" schemaVersion="1.2" id="TWEETS_DATA" applyPrivilegeType="ANALYTIC_PRIVILEGE" checkAnalyticPrivileges="true" defaultClient="$$client$$" defaultLanguage="$$language$$" visibility="internal" dimensionType="Standard">
+  <origin/>
+  <descriptions defaultDescription="TWEETS_DATA"/>
+  <metadata changedAt="2016-04-23 17:02:40.03"/>
+  <attributes>
+    <attribute id="ID" order="1" attributeHierarchyActive="false" displayAttribute="false" key="true">
+      <descriptions defaultDescription="ID"/>
+      <keyMapping schemaName="X3_STUDENT_001" columnObjectName="IDP_TWITTER_DATA" columnName="ID"/>
+    </attribute>
+    <attribute id="ID_1" order="2" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="ID_1"/>
+      <keyMapping schemaName="X3_STUDENT_001" columnObjectName="$TA_FT_INDEX01" columnName="ID"/>
+    </attribute>
+    <attribute id="CREATED_AT" order="3" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="CREATED_AT"/>
+      <keyMapping schemaName="X3_STUDENT_001" columnObjectName="IDP_TWITTER_DATA" columnName="CREATED_AT"/>
+    </attribute>
+    <attribute id="CONTENT" order="4" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="CONTENT"/>
+      <keyMapping schemaName="X3_STUDENT_001" columnObjectName="IDP_TWITTER_DATA" columnName="CONTENT"/>
+    </attribute>
+    <attribute id="FROM_USER_SCREEN_NAME" order="5" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="FROM_USER_SCREEN_NAME"/>
+      <keyMapping schemaName="X3_STUDENT_001" columnObjectName="IDP_TWITTER_DATA" columnName="FROM_USER_SCREEN_NAME"/>
+    </attribute>
+    <attribute id="FROM_USER_LOCATION" order="6" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="FROM_USER_LOCATION"/>
+      <keyMapping schemaName="X3_STUDENT_001" columnObjectName="IDP_TWITTER_DATA" columnName="FROM_USER_LOCATION"/>
+    </attribute>
+    <attribute id="TA_TYPE" order="7" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="TA_TYPE"/>
+      <keyMapping schemaName="X3_STUDENT_001" columnObjectName="$TA_FT_INDEX01" columnName="TA_TYPE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <privateDataFoundation>
+    <tableProxies>
+      <tableProxy>
+        <table schemaName="X3_STUDENT_001" columnObjectName="IDP_TWITTER_DATA"/>
+      </tableProxy>
+      <tableProxy>
+        <table schemaName="X3_STUDENT_001" columnObjectName="$TA_FT_INDEX01"/>
+      </tableProxy>
+    </tableProxies>
+    <joins>
+      <join>
+        <leftTable schemaName="X3_STUDENT_001" columnObjectName="IDP_TWITTER_DATA"/>
+        <rightTable schemaName="X3_STUDENT_001" columnObjectName="$TA_FT_INDEX01"/>
+        <leftColumns>
+          <columnName>ID</columnName>
+        </leftColumns>
+        <rightColumns>
+          <columnName>ID</columnName>
+        </rightColumns>
+        <properties joinOperator="Equal" joinType="referential"/>
+      </join>
+    </joins>
+    <layout>
+      <shapes>
+        <shape modelObjectName="IDP_TWITTER_DATA" modelObjectNameSpace="X3_STUDENT_001" modelObjectType="catalog">
+          <upperLeftCorner x="70" y="30"/>
+        </shape>
+        <shape modelObjectName="$TA_FT_INDEX01" modelObjectNameSpace="X3_STUDENT_001" modelObjectType="catalog">
+          <upperLeftCorner x="379" y="30"/>
+        </shape>
+        <shape modelObjectName="DataFoundation" modelObjectNameSpace="DataFoundation" modelObjectType="repository">
+          <upperLeftCorner x="40" y="85"/>
+          <rectangleSize/>
+        </shape>
+      </shapes>
+    </layout>
+  </privateDataFoundation>
+  <hierarchies/>
+</Dimension:dimension>
